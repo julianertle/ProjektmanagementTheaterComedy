@@ -11,27 +11,27 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hhn.ai.pmt.theatercomedy.control.StartseiteController">
    <children>
-      <HBox layoutX="43.0" layoutY="54.0" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="333.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="54.0">
+      <HBox layoutX="43.0" layoutY="54.0" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="54.0">
          <children>
-            <MenuButton alignment="TOP_LEFT" layoutX="43.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Genre" HBox.hgrow="ALWAYS">
+            <MenuButton alignment="TOP_LEFT" layoutX="43.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Genre" textAlignment="CENTER" HBox.hgrow="ALWAYS">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
               </items>
             </MenuButton>
-            <MenuButton alignment="TOP_LEFT" layoutX="197.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Bühne" HBox.hgrow="ALWAYS">
+            <MenuButton alignment="TOP_LEFT" layoutX="197.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Bühne" textAlignment="CENTER" HBox.hgrow="ALWAYS">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
               </items>
             </MenuButton>
-            <MenuButton alignment="TOP_LEFT" layoutX="351.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Künstler" HBox.hgrow="ALWAYS">
+            <MenuButton alignment="TOP_LEFT" layoutX="351.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Künstler" textAlignment="CENTER" HBox.hgrow="ALWAYS">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
               </items>
             </MenuButton>
-            <Button alignment="TOP_LEFT" layoutX="490.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFavoritenButtonClick" text="Favoriten" HBox.hgrow="ALWAYS" />
+            <Button alignment="TOP_LEFT" layoutX="490.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFavoritenButtonClick" text="Favoriten" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
       <Pane layoutX="27.0" layoutY="91.0" style="-fx-background-color: LIGHTGRAY;">
@@ -44,7 +44,7 @@
             <Region layoutX="27.0" layoutY="256.0" prefHeight="80.0" prefWidth="544.0" style="-fx-background-color: GRAY;" />
          </children>
       </Group>
-      <HBox layoutX="19.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="373.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0">
+      <HBox layoutX="19.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0">
          <children>
             <TextField alignment="CENTER" layoutX="43.0" layoutY="14.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" HBox.hgrow="ALWAYS" />
          </children>
