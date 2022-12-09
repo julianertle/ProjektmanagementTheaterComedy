@@ -31,7 +31,8 @@
                         <MenuItem mnemonicParsing="false" text="Action 2" />
                     </items>
                 </MenuButton>
-                <Button alignment="TOP_LEFT" layoutX="490.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFavoritenButtonClick" text="Favoriten" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                <Button fx:id="favoriteButton" alignment="TOP_LEFT" layoutX="490.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFavoritenButtonClick" text="Favoriten" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+
             </children>
         </HBox>
         <Group />
