@@ -8,12 +8,11 @@ import javafx.scene.control.Button;
 
 import java.net.URL;
 
-public class RegistrierenView {
-
+public class LoginView {
     public void startView(Scene scene){
         try {
             ClassLoader classLoader = getClass().getClassLoader();
-            URL fxmlUrl = classLoader.getResource("de/hhn/ai/pmt/theatercomedy/registrieren-view.fxml");
+            URL fxmlUrl = classLoader.getResource("de/hhn/ai/pmt/theatercomedy/login-view.fxml");
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(fxmlUrl);
             Node root = fxmlLoader.load();

@@ -43,7 +43,7 @@
          </font></Label>
       <TextField />
       <Label text="Besitzen Sie bereits ein Konto?" textFill="#3524e8" />
-        <Button onAction="#onRegistrationButtonClick" text="Registrieren">
+        <Button onAction="#inRegistrationViewButtonClick" text="Registrieren">
          <font>
             <Font size="24.0" />
          </font></Button>

@@ -13,7 +13,7 @@
     <children>
         <HBox layoutX="43.0" layoutY="54.0" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="54.0">
             <children>
-            <Button id="homeButton" fx:id="homeButton" alignment="TOP_LEFT" layoutX="383.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFavoritenButtonClick" text="Home" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+            <Button id="homeButton" fx:id="homeButton" alignment="TOP_LEFT" layoutX="383.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHomeButtonClick" text="Home" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
                 <MenuButton alignment="TOP_LEFT" layoutX="43.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Genre" textAlignment="CENTER" HBox.hgrow="ALWAYS">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
@@ -33,10 +33,11 @@
                     </items>
                 </MenuButton>
                 <Button fx:id="favoriteButton" alignment="TOP_LEFT" layoutX="490.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFavoritenButtonClick" text="Favoriten" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
-            <MenuButton id="loginRegisterButton" alignment="TOP_LEFT" layoutX="219.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Login/Registrieren" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+            <MenuButton id="loginRegisterButton" alignment="TOP_LEFT" layoutX="219.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Benutzer" textAlignment="CENTER" HBox.hgrow="ALWAYS">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Login" />
-                  <MenuItem mnemonicParsing="false" text="Registrieren" />
+                  <MenuItem fx:id="loginMenuButton" mnemonicParsing="false" onAction="#onLoginMenuClick" text="Login" />
+                  <MenuItem fx:id="registrationMenuButton" mnemonicParsing="false" onAction="#onRegistrationMenuClick" text="Registrieren" />
+                  <MenuItem fx:id="settingsMenuButton" mnemonicParsing="false" onAction="#onSettingsMenuClick" text="Einstellungen" />
                </items>
             </MenuButton>
 
