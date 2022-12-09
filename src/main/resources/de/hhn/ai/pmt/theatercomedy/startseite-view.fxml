@@ -9,10 +9,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hhn.ai.pmt.theatercomedy.control.StartseiteController">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hhn.ai.pmt.theatercomedy.control.Controller">
     <children>
         <HBox layoutX="43.0" layoutY="54.0" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="54.0">
             <children>
+            <Button id="homeButton" fx:id="homeButton" alignment="TOP_LEFT" layoutX="383.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFavoritenButtonClick" text="Home" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
                 <MenuButton alignment="TOP_LEFT" layoutX="43.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Genre" textAlignment="CENTER" HBox.hgrow="ALWAYS">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
@@ -32,6 +33,12 @@
                     </items>
                 </MenuButton>
                 <Button fx:id="favoriteButton" alignment="TOP_LEFT" layoutX="490.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFavoritenButtonClick" text="Favoriten" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+            <MenuButton id="loginRegisterButton" alignment="TOP_LEFT" layoutX="219.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Login/Registrieren" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Login" />
+                  <MenuItem mnemonicParsing="false" text="Registrieren" />
+               </items>
+            </MenuButton>
 
             </children>
         </HBox>
