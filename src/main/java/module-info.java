@@ -4,6 +4,7 @@ module de.hhn.ai.pmt.theatercomedy {
 
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
+    requires java.desktop;
 
     opens de.hhn.ai.pmt.theatercomedy to javafx.fxml;
     exports de.hhn.ai.pmt.theatercomedy;

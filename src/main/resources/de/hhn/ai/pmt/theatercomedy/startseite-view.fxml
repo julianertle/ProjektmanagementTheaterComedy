@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hhn.ai.pmt.theatercomedy.control.Controller">
+    <children>
+        <HBox layoutX="43.0" layoutY="54.0" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="54.0">
+            <children>
+            <Button id="homeButton" fx:id="homeButton" alignment="TOP_LEFT" layoutX="383.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHomeButtonClick" text="Home" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                <MenuButton alignment="TOP_LEFT" layoutX="43.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Genre" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                    </items>
+                </MenuButton>
+                <MenuButton alignment="TOP_LEFT" layoutX="197.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Bühne" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                    </items>
+                </MenuButton>
+                <MenuButton alignment="TOP_LEFT" layoutX="351.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Künstler" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                    </items>
+                </MenuButton>
+                <Button fx:id="favoriteButton" alignment="TOP_LEFT" layoutX="490.0" layoutY="54.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFavoritenButtonClick" text="Favoriten" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+            <MenuButton id="loginRegisterButton" alignment="TOP_LEFT" layoutX="219.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Benutzer" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <items>
+                  <MenuItem fx:id="loginMenuButton" mnemonicParsing="false" onAction="#onLoginMenuClick" text="Login" />
+                  <MenuItem fx:id="registrationMenuButton" mnemonicParsing="false" onAction="#onRegistrationMenuClick" text="Registrieren" />
+                  <MenuItem fx:id="settingsMenuButton" mnemonicParsing="false" onAction="#onSettingsMenuClick" text="Einstellungen" />
+               </items>
+            </MenuButton>
+
+            </children>
+        </HBox>
+        <Group />
+        <HBox layoutX="19.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0">
+            <children>
+                <TextField alignment="CENTER" layoutX="43.0" layoutY="14.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+        <HBox layoutX="34.0" layoutY="347.0" spacing="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+            <children>
+                <Region layoutX="34.0" layoutY="347.0" prefHeight="42.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" HBox.hgrow="ALWAYS" />
+                <Region prefHeight="42.0" style="-fx-background-color: gray;" GridPane.columnIndex="3" HBox.hgrow="ALWAYS" />
+                <Region prefHeight="42.0" style="-fx-background-color: lightgray;" GridPane.columnIndex="4" HBox.hgrow="ALWAYS" />
+                <Region prefHeight="42.0" style="-fx-background-color: lightgray;" HBox.hgrow="ALWAYS" />
+                <Region prefHeight="42.0" style="-fx-background-color: lightgray;" GridPane.columnIndex="2" HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+        <VBox layoutX="20.0" layoutY="95.0" prefHeight="205.0" prefWidth="493.0" style="-fx-background-color: lightgray;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+            <children>
+                <Region prefHeight="200.0" prefWidth="200.0" />
+                <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;" />
+                <Region prefHeight="200.0" prefWidth="200.0" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
