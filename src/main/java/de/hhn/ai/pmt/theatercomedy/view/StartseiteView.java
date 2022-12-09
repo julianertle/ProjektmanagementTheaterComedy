@@ -10,6 +10,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 
 import java.io.IOException;
+import java.net.URL;
 
 
 public class StartseiteView extends Application {
@@ -25,11 +26,16 @@ public class StartseiteView extends Application {
         int screenHeight = screenSize.height;
         int screenWidth = screenSize.width;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("startseite-view.fxml"));
+        ClassLoader classLoader = getClass().getClassLoader();
+        URL fxmlUrl = classLoader.getResource("de/hhn/ai/pmt/theatercomedy/startseite-view.fxml");
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(fxmlUrl);
+
         Scene scene = new Scene(fxmlLoader.load(), screenWidth / 3.0, screenHeight / 2.0);
         stage.setTitle("Hello!");
         stage.setScene(scene);
-        stage.setMaximized(true);
+        stage.setMinWidth(screenWidth / 3.0);
+        stage.setMinHeight(screenHeight / 2.0);
         stage.show();
     }
 
