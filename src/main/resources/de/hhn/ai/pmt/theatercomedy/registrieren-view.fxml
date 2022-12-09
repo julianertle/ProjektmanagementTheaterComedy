@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hhn.ai.pmt.theatercomedy.model.HelloController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hhn.ai.pmt.theatercomedy.control.StartseiteController">
     <padding>
         <Insets bottom="200.0" left="200.0" right="200.0" top="150.0" />
     </padding>
@@ -43,7 +43,7 @@
          </font></Label>
       <TextField />
       <Label text="Besitzen Sie bereits ein Konto?" textFill="#3524e8" />
-        <Button onAction="#onHelloButtonClick" text="Registrieren">
+        <Button onAction="#onRegistrationButtonClick" text="Registrieren">
          <font>
             <Font size="24.0" />
          </font></Button>
