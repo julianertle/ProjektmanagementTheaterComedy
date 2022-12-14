@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import java.net.URL;
 
 public class RegistrierenView {
-
     public void startView(Scene scene){
         try {
             ClassLoader classLoader = getClass().getClassLoader();

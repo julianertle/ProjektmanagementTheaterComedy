@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hhn.ai.pmt.theatercomedy.control.LoginController">
+   <children>
+      <TextField fx:id="usernameTextField" alignment="CENTER" layoutX="209.0" layoutY="107.0" />
+      <TextField fx:id="passwordTextField" alignment="CENTER" layoutX="213.0" layoutY="188.0" />
+      <Label fx:id="usernameLabel" alignment="CENTER" layoutX="209.0" layoutY="90.0" text="Username" />
+      <Label fx:id="passwordLabel" alignment="CENTER" layoutX="211.0" layoutY="171.0" text="Password" />
+      <Button fx:id="loginButton" alignment="CENTER" layoutX="265.0" layoutY="279.0" mnemonicParsing="false" onAction="#loginButtonOnClick" text="Login" />
+      <Hyperlink fx:id="registerLink" alignment="CENTER" layoutX="266.0" layoutY="256.0" onAction="#registerLinkOnClick" text="Sign In" />
+   </children>
+</AnchorPane>
