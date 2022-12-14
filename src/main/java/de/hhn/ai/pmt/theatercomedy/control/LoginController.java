@@ -1,7 +1,6 @@
 package de.hhn.ai.pmt.theatercomedy.control;
 
 
-
 import de.hhn.ai.pmt.theatercomedy.view.RegistrierenView;
 import de.hhn.ai.pmt.theatercomedy.view.StartseiteView;
 import javafx.fxml.FXML;
