@@ -34,6 +34,7 @@ public class LoginController {
 
     @FXML
     void loginButtonOnClick() throws IOException {
+
         System.out.println("----- Login Button geklickt -----");
         StartseiteView view = new StartseiteView();
         view.start(new Stage());
