@@ -2,18 +2,12 @@ package de.hhn.ai.pmt.theatercomedy.control;
 
 
 import de.hhn.ai.pmt.theatercomedy.view.RegistrierenView;
-import de.hhn.ai.pmt.theatercomedy.view.StartseiteView;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import javafx.scene.control.*;
 import klassendiagramm.*;
-import org.orm.PersistentException;
-
 import java.io.IOException;
-import java.util.Objects;
+import java.nio.channels.ConnectionPendingException;
+
 
 public class LoginController {
 
@@ -38,64 +32,44 @@ public class LoginController {
 
 
     @FXML
-    void loginButtonOnClick() throws IOException, PersistentException {
-
-        usernameTextField.setText("Theater");
-        passwordTextField.setText("Comedy");
-
+    void loginButtonOnClick() throws IOException, RuntimeException {
 
         String user = usernameTextField.getCharacters().toString();
         String passwort = passwordTextField.getCharacters().toString();
 
         if(user.isEmpty()||user.isBlank()){
+            emptyUsernameDialog();
             System.out.println("Benutzer darf nicht leer sein");
             return;
         }else if(passwort.isEmpty()||passwort.isBlank()){
+            emptyPasswortDialog();
             System.out.println("Passwort darf nicht leer sein");
             return;
         }
 
-        Benutzerkonto[] databaseUser = BenutzerkontoDAO.listBenutzerkontoByQuery("Benutzername like '" + user + "'", "Benutzername");
         Benutzerkonto benutzerkonto = null;
         try{
-            //Benutzerkonto[] databaseUser = BenutzerkontoDAO.listBenutzerkontoByQuery("Benutzername like '" + user + "'", "Benutzername");
-            Ticketshop ticketshop = TicketshopDAO.getTicketshopByORMID(2);
+            benutzerkonto = BenutzerkontoDAO.getBenutzerkontoByORMID(user);
 
-            BenutzerkontoSetCollection benutzerCollection = ticketshop.benutzer;
-            Benutzerkonto[] benutzerkontoList = benutzerCollection.toArray();
-
-
-            for(Benutzerkonto benutzerkontoListEach: benutzerkontoList){
-                if(Objects.equals(benutzerkontoListEach.getBenutzername(), user)){
-                    System.out.println(benutzerkontoListEach.getBenutzername());
-                    benutzerkonto=benutzerkontoListEach;
-                }else{
-                    System.out.println("Nutzer nicht gefunden");
-                    return;
-                }
-            }
-        }catch (Exception e){
+        }catch (ConnectionPendingException e){
+            connectionProblemDialog();
+            System.out.println(e);
+            return;
+        }
+        if(benutzerkonto==null){
             System.out.println("BenutzerName nicht vorhanden");
-
-        }
-
-        try{
-            if(!passwort.equals(benutzerkonto.getPasswort())){
-                System.out.println("Falsches Passwort");
-            }else{
-                System.out.println("Erfolgreich angemeldet");
-            }
-        }catch (Exception e){
-            System.out.println("fehler");
+            noUserDialog();
+            return;
         }
 
 
-
-
-
-
-        System.out.println("----- Login Button geklickt -----");
-
+        if(!passwort.equals(benutzerkonto.getPasswort())){
+            System.out.println("Falsches Passwort");
+            wrongPasswortDialog();
+        }else{
+            System.out.println("Erfolgreich angemeldet");
+            corrrectLoginDialog();
+        }
 
     }
 
@@ -106,4 +80,60 @@ public class LoginController {
         view.startView(registerLink.getScene());
     }
 
+    public void connectionProblemDialog(){
+        Dialog<String> noConnectionDialog = new Dialog<>();
+
+        noConnectionDialog.setTitle("Verbindung verloren");
+        noConnectionDialog.setContentText("Keine Verbindung mit dem Server möglich");
+        ButtonType type = new ButtonType("OK",ButtonBar.ButtonData.OK_DONE);
+        noConnectionDialog.getDialogPane().getButtonTypes().add(type);
+        noConnectionDialog.show();
+    }
+    public void noUserDialog(){
+        Dialog<String> noUserDialog = new Dialog<>();
+
+        noUserDialog.setTitle("User nicht vorhanden");
+        noUserDialog.setContentText("Der eingegebene Benutzer existiert nicht");
+        ButtonType type = new ButtonType("OK",ButtonBar.ButtonData.OK_DONE);
+        noUserDialog.getDialogPane().getButtonTypes().add(type);
+        noUserDialog.show();
+    }
+    public void emptyUsernameDialog(){
+        Dialog<String> noUsernameDialog = new Dialog<>();
+
+        noUsernameDialog.setTitle("Username leer");
+        noUsernameDialog.setContentText("Sie müssen einen Usernamen eingeben");
+        ButtonType type = new ButtonType("OK",ButtonBar.ButtonData.OK_DONE);
+        noUsernameDialog.getDialogPane().getButtonTypes().add(type);
+        noUsernameDialog.show();
+    }
+    public void emptyPasswortDialog(){
+        Dialog<String> noPasswortDialog = new Dialog<>();
+
+        noPasswortDialog.setTitle("Passwort leer");
+        noPasswortDialog.setContentText("Sie müssen einen Passwort eingeben");
+        ButtonType type = new ButtonType("OK",ButtonBar.ButtonData.OK_DONE);
+        noPasswortDialog.getDialogPane().getButtonTypes().add(type);
+        noPasswortDialog.show();
+    }
+    public void wrongPasswortDialog(){
+        Dialog<String> wrongPasswortDialog = new Dialog<>();
+
+        wrongPasswortDialog.setTitle("Passwort falsch");
+        wrongPasswortDialog.setContentText("Ihr eingegebenes Passwort ist falsch");
+        ButtonType type = new ButtonType("OK",ButtonBar.ButtonData.OK_DONE);
+        wrongPasswortDialog.getDialogPane().getButtonTypes().add(type);
+        wrongPasswortDialog.show();
+    }
+    public void corrrectLoginDialog(){
+        Dialog<String> correctLoginDialog = new Dialog<>();
+
+        correctLoginDialog.setTitle("Erfolgreich angemeldet");
+        correctLoginDialog.setContentText("Glückwunsch!!! Sie haben sich erfolgreich angemeldet!");
+        ButtonType type = new ButtonType("OK",ButtonBar.ButtonData.OK_DONE);
+        correctLoginDialog.getDialogPane().getButtonTypes().add(type);
+        correctLoginDialog.show();
+    }
+
 }
+

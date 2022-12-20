@@ -4,6 +4,10 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.0.13'
     id 'org.beryx.jlink' version '2.25.0'
 }
+ant.importBuild('C:\\Users\\lukir\\OneDrive\\Desktop\\test3\\neuCode\\build.xml') { antTarget ->
+    'ant-' + antTarget
+}
+compileJava.dependsOn "ant-compile"
 
 group 'de.hhn.ai.pmt'
 version '1.0-SNAPSHOT'
@@ -41,8 +45,8 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 
-    implementation fileTree(dir: "D:\\Studium\\3 Semester\\permantieeeee\\Neu_TehaterComedy\\Buga_neu\\classes\\lib")
-    implementation files("D:\\Studium\\3 Semester\\permantieeeee\\Neu_TehaterComedy\\Buga_neu\\classes\\classes")
+    implementation fileTree(dir: "C:\\Users\\lukir\\OneDrive\\Desktop\\test3\\neuCode\\lib")
+    implementation files("C:\\Users\\lukir\\OneDrive\\Desktop\\test3\\neuCode\\classes")
 
 }
 
@@ -62,7 +66,3 @@ jlinkZip {
     group = 'distribution'
 }
 
-ant.importBuild('D:\\Studium\\3 Semester\\permantieeeee\\Neu_TehaterComedy\\Buga_neu\\classes\\build.xml') { antTarget ->
-    'ant-' + antTarget
-}
-compileJava.dependsOn "ant-compile"
